@@ -2,6 +2,11 @@
 
 A small, personal browser game made as a gift for Ilya. Explore a nighttime pixel world, discover places and inside jokes, and find Binky the dog. The game pairs a dark emo aesthetic and gothic lettering with keyboard and phone-friendly controls.
 
+## Demo
+
+https://github.com/user-attachments/assets/9de06317-0f87-466d-bfba-89f8324b6e14
+
+
 ## Tech stack
 
 - **React 19 + TypeScript** for the interface and game state
