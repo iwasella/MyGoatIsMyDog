@@ -12,3 +12,9 @@ If a restaurant memory is referenced, use only the fictional name “Garden of t
 **Why:** The user refined the original chaotic-teasing brief: they explicitly requested removing roasts and unwanted symbols while keeping the font and dark palette.
 
 **How to apply:** Apply these limits to all new copy, background images, sprites, and animations. Personal references should be occasional discoveries, not repeated exposition.
+
+Preserve the small walkable pixel-world direction when making further personalization changes.
+
+**Why:** The user explicitly said “I really really like this version now,” then asked for landmark and dialogue refinements rather than a new game direction.
+
+**How to apply:** Refine the existing world without replacing its gameplay or visual identity unless asked.

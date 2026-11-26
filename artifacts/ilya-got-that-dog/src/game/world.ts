@@ -6,7 +6,7 @@ export type Point = { x: number; y: number };
 export type Terrain = 'grass' | 'path' | 'water' | 'tree';
 export type Landmark = Point & {
   id: string;
-  kind: 'cottage' | 'bird' | 'takeout' | 'messages' | 'garden' | 'peace';
+  kind: 'library' | 'bird' | 'food' | 'messages' | 'car' | 'peace' | 'cat';
   name: string;
   text: string;
 };
@@ -20,9 +20,9 @@ export const DOG_POSITIONS: Point[] = [
 
 export const LANDMARKS: Landmark[] = [
   {
-    id: 'cottage', kind: 'cottage', x: 6, y: 2,
-    name: 'The hangout',
-    text: 'No plans. No dress code. Black is always fine. Come on in, bro.',
+    id: 'library', kind: 'library', x: 6, y: 2,
+    name: 'La biblioteca',
+    text: 'Second-floor study room. Almost no soundproofing.\nYou: lab report. Me: a Zoom call, no headphones, and YouTube at 2× speed.\nSomehow, we’re both locked in.',
   },
   {
     id: 'bird', kind: 'bird', x: 12, y: 4,
@@ -30,24 +30,29 @@ export const LANDMARKS: Landmark[] = [
     text: 'Squeak. A little head bop. Rap or classical, he respects the playlist. Watch your fingers.',
   },
   {
-    id: 'takeout', kind: 'takeout', x: 4, y: 8,
-    name: 'The usual',
-    text: 'Cane’s Box Combo. No slaw. Extra toast. A fat lemonade. Your order is safe here.',
+    id: 'food', kind: 'food', x: 4, y: 8,
+    name: 'Thank you for the foods',
+    text: 'Your mom. Literally—saved us all.\nAnd thank you for waiting until we returned all your spoons over time.',
   },
   {
     id: 'messages', kind: 'messages', x: 9, y: 11,
     name: 'One unread message',
-    text: '12:04 — hello\n15:47 — ello\nA full conversation. We’re both booked and busy.',
+    text: '09:04 — hello\n12:47 — ello\n15:32 — food?\n18:08 — okie\n21:16 — okokokok',
   },
   {
-    id: 'garden', kind: 'garden', x: 13, y: 9,
-    name: 'The little greenhouse',
-    text: 'A very chill corner of the world. No rush. Binky is around here somewhere.',
+    id: 'car', kind: 'car', x: 13, y: 9,
+    name: 'The grey Model Y',
+    text: 'Inside: a crayon drawing of cats, coconut water, and a bag of pistachios.',
   },
   {
     id: 'peace', kind: 'peace', x: 7, y: 4,
     name: 'Silver peace charm',
     text: 'A little silver. A little peace. Good company. That’s the whole plan.',
+  },
+  {
+    id: 'max', kind: 'cat', x: 10, y: 6,
+    name: 'Max',
+    text: 'The neighborhood ginger cat.',
   },
 ];
 

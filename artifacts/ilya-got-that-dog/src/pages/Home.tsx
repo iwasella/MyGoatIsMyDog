@@ -2,15 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import type { PointerEvent, MouseEvent, ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronUp, ChevronDown, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
-import { WORLD_COLS, WORLD_ROWS, LANDMARKS, terrainAt, type Direction } from "@/game/world";
+import { WORLD_COLS, WORLD_ROWS, LANDMARKS, terrainAt, type Direction, type Landmark } from "@/game/world";
 import { usePixelAdventure } from "@/hooks/usePixelAdventure";
-import { TerrainTile, Cottage, Bird, Takeout, Messages, Garden, PeaceStone, Player, Dog, GlossySmiley } from "@/components/world/Sprites";
+import { TerrainTile, Library, Bird, Food, Messages, Car, Cat, PeaceStone, Player, Dog, GlossySmiley } from "@/components/world/Sprites";
 
 const T = 16;
 const ENDING = "Maybe the real dog was the one you had in you all along bro";
 
-const LANDMARK_ART: Record<string, () => ReactNode> = {
-  cottage: Cottage, bird: Bird, takeout: Takeout, messages: Messages, garden: Garden, peace: PeaceStone,
+const LANDMARK_ART: Record<Landmark["kind"], () => ReactNode> = {
+  library: Library, bird: Bird, food: Food, messages: Messages, car: Car, cat: Cat, peace: PeaceStone,
 };
 
 export default function Home() {
@@ -132,7 +132,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: reduce ? 0 : 0.18 }}
                   role="dialog" aria-live="polite" aria-label={g.dialog.title}
-                  className="absolute left-2 right-2 bottom-2 sm:left-6 sm:right-6 sm:bottom-5 frame p-3 sm:p-4"
+                  className="absolute left-2 right-2 bottom-2 sm:left-6 sm:right-6 sm:bottom-5 max-h-[calc(100%-1rem)] overflow-y-auto frame p-3 sm:p-4"
                   data-testid="dialog-landmark"
                 >
                   <h2 className="font-goth text-2xl sm:text-3xl chrome leading-none" data-testid="text-dialog-title">{g.dialog.title}</h2>
