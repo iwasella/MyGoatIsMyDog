@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Ilya’s Dog Hunt"
+description = "A personal, phone-friendly hidden-dog game for Ilya, with dark Y2K fashion energy, friendship inside jokes, and a ridiculous final reveal."
+version = "1.0.0"
+id = "artifacts/ilya-got-that-dog"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22658
+
+[services.development]
+run = "pnpm --filter @workspace/ilya-got-that-dog run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ilya-got-that-dog", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ilya-got-that-dog/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22658"
+BASE_PATH = "/"

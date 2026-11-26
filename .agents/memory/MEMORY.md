@@ -1,0 +1,1 @@
+- [Gift tone and naming](gift-tone.md) — use chaotic teasing and the fictional restaurant name requested for the gift.
