@@ -432,31 +432,32 @@
   }
 }
 
-/* ---------- Dog Hunt ---------- */
-html, body { background: #0a0a09; }
-body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.09;
+/* ---------- Late Walk ---------- */
+:root { --night:#0d0b14; --plum:#1c1626; --silver:#c9ccd6; --lime:#c6ff2e; --rose:#ff4f93; }
+html, body { background: var(--night); }
+body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.07;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-.font-goth { font-family: 'Pirata One', serif; letter-spacing: .01em; }
-.font-px { font-family: 'VT323', monospace; }
-.chrome { background: linear-gradient(180deg,#fafaf2 0%,#9a9d96 45%,#3b3d3a 52%,#d9dccf 70%,#fff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.screentone { background-image: radial-gradient(hsl(60 20% 92% / .14) 1px, transparent 1.2px); background-size: 6px 6px; }
-.stitch { outline: 1px dashed hsl(78 100% 55% / .5); outline-offset: -6px; }
-@keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px) rotate(-.4deg)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px) rotate(.3deg)} 80%{transform:translateX(2px)} }
-.shake { animation: shake .4s cubic-bezier(.36,.07,.19,.97); }
-@keyframes floatUp { 0%{opacity:0; transform:translate(-50%,-30%) scale(.6) rotate(-6deg)} 15%{opacity:1; transform:translate(-50%,-80%) scale(1.08) rotate(-3deg)} 100%{opacity:0; transform:translate(-50%,-230%) scale(1) rotate(2deg)} }
-.float-up { animation: floatUp 1.5s ease-out forwards; }
-@keyframes wobble { 0%,100%{transform:rotate(var(--r,0deg))} 50%{transform:rotate(calc(var(--r,0deg) + 4deg)) translateY(-2px)} }
-.decoy { animation: wobble var(--d,5s) ease-in-out infinite; transform-origin:center; }
-@keyframes huntPulse { 0%,100%{transform:translate(-50%,-50%) scale(1); opacity:.9} 50%{transform:translate(-50%,-50%) scale(1.25); opacity:.4} }
-.hunt-ring { animation: huntPulse 1.2s ease-in-out infinite; }
-@keyframes confetti { 0%{transform:translate3d(0,-10vh,0) rotate(0)} 100%{transform:translate3d(var(--x),110vh,0) rotate(var(--rot))} }
-.confetti { animation: confetti var(--t) linear var(--delay) infinite; }
-@keyframes marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.marquee { animation: marq 28s linear infinite; }
-@keyframes slam { 0%{opacity:0; transform:scale(2.6) rotate(-8deg)} 60%{opacity:1; transform:scale(.94) rotate(1deg)} 100%{transform:scale(1) rotate(-1deg)} }
-.slam { animation: slam .7s cubic-bezier(.2,1.4,.4,1) both; }
+.font-goth { font-family:'Pirata One', serif; letter-spacing:.01em; }
+.font-px { font-family:'VT323', monospace; }
+.chrome { background:linear-gradient(180deg,#fbfbff 0%,#a7abb8 44%,#3a3c46 52%,#dcdfe8 70%,#fff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.pixel { image-rendering:pixelated; shape-rendering:crispEdges; }
+.frame { border:3px solid #8d91a0; box-shadow: inset 0 0 0 3px #2a2433, inset 0 0 0 5px #c9ccd6, 6px 6px 0 #000; background:#15111d; }
+.mover { transition: transform 150ms steps(3, end); }
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1px)} }
+.bob { animation: bob .9s steps(2) infinite; }
+@keyframes bop { 0%,100%{transform:translateY(0) rotate(0)} 25%{transform:translateY(-2px) rotate(-8deg)} 75%{transform:translateY(-1px) rotate(8deg)} }
+.bop { animation: bop .6s steps(4) infinite; transform-box: fill-box; transform-origin: center bottom; }
+@keyframes ripple { 0%,100%{opacity:.25} 50%{opacity:.8} }
+.ripple { animation: ripple 2.4s steps(3) infinite; }
+@keyframes twinkle { 0%,100%{opacity:.2} 50%{opacity:1} }
+.twinkle { animation: twinkle 3s steps(3) infinite; }
+@keyframes note { 0%{opacity:0; transform:translate(0,0)} 30%{opacity:1} 100%{opacity:0; transform:translate(4px,-10px)} }
+.note { animation: note 1.8s linear infinite; transform-box: fill-box; }
+@keyframes spinGloss { 0%,100%{transform:rotate(-8deg)} 50%{transform:rotate(8deg) scale(1.04)} }
+.smiley { animation: spinGloss 4s ease-in-out infinite; }
+@keyframes pop { 0%{opacity:0; transform:translateY(8px) scale(.96)} 100%{opacity:1; transform:none} }
+.pop { animation: pop .22s steps(3) both; }
+.dpad button { touch-action:none; -webkit-user-select:none; user-select:none; }
 @media (prefers-reduced-motion: reduce) {
-  .shake,.decoy,.hunt-ring,.confetti,.marquee,.slam { animation: none !important; }
-  .float-up { animation: floatUp 1.5s steps(1) forwards; }
-  .confetti { display:none; }
+  .mover { transition:none; } .bob,.bop,.ripple,.twinkle,.note,.smiley,.pop { animation:none !important; }
 }

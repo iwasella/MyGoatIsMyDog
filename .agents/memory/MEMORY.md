@@ -1,1 +1,1 @@
-- [Gift tone and naming](gift-tone.md) — use chaotic teasing and the fictional restaurant name requested for the gift.
+- [Gift tone and naming](gift-tone.md) — dark emo gift direction; no roasts, crosses, anime clichés, or repeated friendship exposition.
